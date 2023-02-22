@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#content {
+    min-height: 100vh;
+}
+#page-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.5rem 1rem;
+    background-color: gray;
+}
+nav {
+    place-self: end;
+    align-self: center;
+}
