@@ -7,7 +7,9 @@ const content = document.getElementById('content');
 
 const mainAppContainer = document.createElement('div');
 mainAppContainer.id = 'main-app-container';
-mainAppContainer.append(createTaskInput(), tasks.tasksContainer, createTaskFilter());
+// eslint-disable-next-line function-paren-newline
+mainAppContainer.append(
+  createTaskInput(), tasks.tasksContainer, tasks.createStatusInfo(), createTaskFilter());
 
 const hintText = document.createElement('p');
 hintText.id = 'hint-text';
