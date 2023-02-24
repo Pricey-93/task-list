@@ -5,12 +5,10 @@
 }
 :root {
     --very-light-grey: hsl(0, 0%, 98%);
+    --very-light-greyish-blue: hsl(236, 33%, 92%);
 }
 body {
     min-height: 100vh;
-}
-#content > * {
-    padding: 2rem;
 }
 header {
     display: flex;
@@ -18,12 +16,37 @@ header {
     background: url(./assets/images/bg-mobile-light.jpg);
     background-size: cover;
     background-position: center;
+    padding: 1.5rem;
     min-width: 375px;
     height: 200px;
     max-height: 200px;
 }
 h1 {
     color: var(--very-light-grey);
+}
+#main-app-container {
+    margin: 1rem;
+    position: relative;
+    top: -115px;
+    z-index: 999;
+}
+#input-container {
+    background-color: var(--very-light-grey);
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+#tasks-container {
+    border: 2px solid pink;
+    border-radius: 5px;
+    background-color: var(--very-light-grey);
+}
+.task {
+    display: flex;
+    padding: 1rem;
+}
+.task > .delete-icon {
+    margin-left: auto;
 }
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
