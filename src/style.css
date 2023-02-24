@@ -6,13 +6,18 @@
 :root {
     --very-light-grey: hsl(0, 0%, 98%);
 }
+body {
+    min-height: 100vh;
+}
+#content > * {
+    padding: 2rem;
+}
 header {
     display: flex;
     justify-content: space-between;
     background: url(./assets/images/bg-mobile-light.jpg);
     background-size: cover;
     background-position: center;
-    padding: 2rem;
     min-width: 375px;
     height: 200px;
     max-height: 200px;
@@ -20,9 +25,5 @@ header {
 h1 {
     color: var(--very-light-grey);
 }
-.page-theme-icon {
-    
-}
-
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
