@@ -24,6 +24,7 @@ export function createTask(todo) {
 
   const deleteIcon = document.createElement('img');
   deleteIcon.src = cross;
+  deleteIcon.classList.add('delete-icon');
 
   container.append(checkBox, description, deleteIcon);
   tasksContainer.appendChild(container);
