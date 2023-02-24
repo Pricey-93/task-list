@@ -9,8 +9,11 @@ const mainAppContainer = document.createElement('div');
 mainAppContainer.id = 'main-app-container';
 mainAppContainer.append(createTaskInput(), tasks.tasksContainer, createTaskFilter());
 
-content.appendChild(createHeader());
-content.appendChild(mainAppContainer);
+const hintText = document.createElement('p');
+hintText.id = 'hint-text';
+hintText.textContent = 'Drag and drop to reorder list';
+
+content.append(createHeader(), mainAppContainer, hintText);
 
 // Add event listeners here (this is currently just for seeing on the page)
 tasks.createTask('test');
