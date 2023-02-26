@@ -50,12 +50,25 @@ h1 {
     z-index: 999;
 }
 #input-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     background-color: var(--basic-background-color);
     padding: var(--standard-padding);
     margin-bottom: var(--standard-margin);
     border-radius: var(--standard-border-radius);
 }
-input[type="checkbox"] {
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--very-light-greyish-blue);
+}
+input[type=text] {
+    border: 0;
+    border-bottom: 1px solid black;
+}
+input[type=checkbox] {
     position: absolute;
     opacity: 0;
 }
@@ -88,11 +101,11 @@ input[type="checkbox"] {
     background-size: contain;
     opacity: 0;
 }
-input[type="checkbox"]:checked + label::before {
+input[type=checkbox]:checked + label::before {
     background: var(--checkbox-background-color);
     border: 1px solid var(--very-light-greyish-blue);
 }
-input[type="checkbox"]:checked + label::after {
+input[type=checkbox]:checked + label::after {
     opacity: 1;
 }
 #tasks-container {
@@ -102,12 +115,10 @@ input[type="checkbox"]:checked + label::after {
 .task {
     display: flex;
     padding: var(--standard-padding);
+    border-bottom: 1px solid var(--very-light-greyish-blue);
 }
 .task > .delete-icon {
     margin-left: auto;
-}
-.task {
-    border-bottom: 1px solid var(--very-light-greyish-blue);
 }
 #tasks-status-container {
     background-color: var(--basic-background-color);

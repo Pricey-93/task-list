@@ -2,15 +2,13 @@ export default function createTaskInput() {
   const container = document.createElement('form');
   container.id = 'input-container';
 
-  const checkBox = document.createElement('input');
-  checkBox.classList.add('check-box');
-  checkBox.type = 'checkbox';
-  checkBox.disabled = true;
+  const circle = document.createElement('div');
+  circle.classList.add('circle');
 
   const taskInput = document.createElement('input');
   taskInput.type = 'text';
   taskInput.placeholder = 'Create a new todo...';
 
-  container.append(checkBox, taskInput);
+  container.append(circle, taskInput);
   return container;
 }
