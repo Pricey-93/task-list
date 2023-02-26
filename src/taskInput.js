@@ -3,6 +3,7 @@ export default function createTaskInput() {
   container.id = 'input-container';
 
   const checkBox = document.createElement('input');
+  checkBox.classList.add('check-box');
   checkBox.type = 'checkbox';
   checkBox.disabled = true;
 
