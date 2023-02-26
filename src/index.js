@@ -12,7 +12,7 @@ const hintText = document.createElement('p');
 hintText.id = 'hint-text';
 hintText.textContent = 'Drag and drop to reorder list';
 
-mainAppContainer.append(createTaskInput(), tasksComponent.tasksContainer, tasksComponent);
+mainAppContainer.append(createTaskInput(), tasksComponent.tasksContainer);
 mainAppContainer.append(tasksComponent.createStatusInfo(), createTaskFilter(), hintText);
 
 content.append(createHeader(), mainAppContainer);
