@@ -1,9 +1,9 @@
 import cross from './assets/images/icon-cross.svg';
 
-let counter = 0;
+let labelCounter = 1;
 
-function incrementCounter() {
-  counter += 1;
+function incrementLabelCounter() {
+  labelCounter += 1;
 }
 // function decrementCounter() {
 //   counter -= 1;
@@ -17,9 +17,13 @@ export function createTask(todo) {
   container.classList.add('task');
 
   const checkBox = document.createElement('input');
+  checkBox.id = `checkbox-${labelCounter}`;
+  checkBox.classList.add('check-box');
   checkBox.type = 'checkbox';
 
-  const description = document.createElement('p');
+  const description = document.createElement('label');
+  description.htmlFor = checkBox.id;
+  description.classList.add('checkbox-label');
   description.textContent = todo;
 
   const deleteIcon = document.createElement('img');
@@ -29,7 +33,7 @@ export function createTask(todo) {
   container.append(checkBox, description, deleteIcon);
   tasksContainer.appendChild(container);
 
-  incrementCounter();
+  incrementLabelCounter();
   return container;
 }
 
@@ -43,7 +47,7 @@ export function createStatusInfo() {
 
   const remainingTasks = document.createElement('p');
   remainingTasks.id = 'remaining-tasks';
-  remainingTasks.textContent = `${counter} items left`;
+  remainingTasks.textContent = 'items left';
 
   const clear = document.createElement('p');
   clear.id = 'clear-action';
