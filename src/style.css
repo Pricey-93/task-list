@@ -4,11 +4,25 @@
     box-sizing: border-box;
 }
 :root {
+    --bright-blue: hsl(220, 98%, 61%);
+    --basic-background-color: #FFFFFF;
     --very-light-grey: hsl(0, 0%, 98%);
     --very-light-greyish-blue: hsl(236, 33%, 92%);
+    --checkbox-background-color: linear-gradient(140deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); 
+    --light-grayish-blue: hsl(233, 11%, 84%);
+    --dark-grayish-blue: hsl(236, 9%, 61%);
+    --very-dark-grayish-blue: hsl(235, 19%, 35%);
+
+    --standard-padding: 1rem;
+    --standard-margin: 1rem;
+    --standard-border-radius: 5px;
 }
 body {
     min-height: 100vh;
+    font-size: 1.125rem;
+    color: var(--very-dark-grayish-blue);
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--very-light-grey);
 }
 header {
     display: flex;
@@ -16,37 +30,109 @@ header {
     background: url(./assets/images/bg-mobile-light.jpg);
     background-size: cover;
     background-position: center;
-    padding: 1.5rem;
+    padding: 1.7rem 1rem 1.7rem 1rem;
     min-width: 375px;
     height: 200px;
     max-height: 200px;
 }
+header > * {
+    margin-top: 15px;
+}
 h1 {
     color: var(--very-light-grey);
+    letter-spacing: 0.5rem;
+    font-weight: 700;
 }
 #main-app-container {
-    margin: 1rem;
+    margin: var(--standard-margin);
     position: relative;
     top: -115px;
     z-index: 999;
 }
 #input-container {
-    background-color: var(--very-light-grey);
-    border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    background-color: var(--basic-background-color);
+    padding: var(--standard-padding);
+    margin-bottom: var(--standard-margin);
+    border-radius: var(--standard-border-radius);
+}
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+}
+.checkbox-label {
+    display: inline-block;
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+.checkbox-label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--very-light-greyish-blue);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.checkbox-label::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    left: 6px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    background: url("assets/images/icon-check.svg") no-repeat center center;
+    background-size: contain;
+    opacity: 0;
+}
+input[type="checkbox"]:checked + label::before {
+    background: var(--checkbox-background-color);
+    border: 1px solid var(--very-light-greyish-blue);
+}
+input[type="checkbox"]:checked + label::after {
+    opacity: 1;
 }
 #tasks-container {
-    border: 2px solid pink;
-    border-radius: 5px;
-    background-color: var(--very-light-grey);
+    border-radius: var(--standard-border-radius);
+    background-color: var(--basic-background-color);
 }
 .task {
     display: flex;
-    padding: 1rem;
+    padding: var(--standard-padding);
 }
 .task > .delete-icon {
     margin-left: auto;
+}
+.task {
+    border-bottom: 1px solid var(--very-light-greyish-blue);
+}
+#tasks-status-container {
+    background-color: var(--basic-background-color);
+    color: var(--dark-grayish-blue);
+    padding: var(--standard-padding);
+    border-radius: var(--standard-border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#task-filter-container {
+    background-color: var(--basic-background-color);
+    padding: var(--standard-padding);
+    margin-top: var(--standard-margin);
+    border-radius: var(--standard-border-radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+#hint-text {
+    text-align: center;
+    padding: var(--standard-padding);
+    margin-top: 3rem;
+    color: var(--very-dark-grayish-blue);
 }
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
