@@ -64,49 +64,22 @@ h1 {
     border-radius: 50%;
     border: 1px solid var(--very-light-greyish-blue);
 }
-input[type=text] {
-    border: 0;
-    border-bottom: 1px solid black;
-}
-input[type=checkbox] {
-    position: absolute;
-    opacity: 0;
-}
-.checkbox-label {
-    display: inline-block;
-    position: relative;
-    padding-left: 2rem;
-    cursor: pointer;
-}
-.checkbox-label::before {
-    content: "";
-    display: inline-block;
+.check-box {
     width: 20px;
     height: 20px;
+    cursor: pointer;
     border-radius: 50%;
+    background-color: white;
     border: 1px solid var(--very-light-greyish-blue);
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.checkbox-label::after {
-    content: "";
+    -webkit-appearance: none;
+  }
+  .check-box:checked {
+    background: url("assets/images/icon-check.svg") no-repeat center center, var(--checkbox-background-color);
+  }
+  .checkbox-label {
     display: inline-block;
-    position: absolute;
-    left: 6px;
-    top: 6px;
-    width: 10px;
-    height: 10px;
-    background: url("assets/images/icon-check.svg") no-repeat center center;
-    background-size: contain;
-    opacity: 0;
-}
-input[type=checkbox]:checked + label::before {
-    background: var(--checkbox-background-color);
-    border: 1px solid var(--very-light-greyish-blue);
-}
-input[type=checkbox]:checked + label::after {
-    opacity: 1;
+    padding-left: var(--standard-padding);
+    cursor: pointer;
 }
 #tasks-container {
     border-radius: var(--standard-border-radius);
@@ -114,11 +87,13 @@ input[type=checkbox]:checked + label::after {
 }
 .task {
     display: flex;
+    align-items: center;
     padding: var(--standard-padding);
     border-bottom: 1px solid var(--very-light-greyish-blue);
 }
 .task > .delete-icon {
     margin-left: auto;
+    cursor: pointer;
 }
 #tasks-status-container {
     background-color: var(--basic-background-color);
