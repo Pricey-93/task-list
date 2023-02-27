@@ -1,26 +1,13 @@
-import createHeader from './header';
-import createTaskInput from './taskInput';
-import * as tasksComponent from './tasks';
-import createTaskFilter from './task-filter';
+import * as tasks from './tasks';
 
-const content = document.getElementById('content');
+const taskList = document.getElementById('task-list');
+taskList.append(tasks.createTask('test'));
 
-const mainAppContainer = document.createElement('div');
-mainAppContainer.id = 'main-app-container';
+const inputField = document.getElementById('input-field');
+const form = document.getElementById('input-container');
 
-const hintText = document.createElement('p');
-hintText.id = 'hint-text';
-hintText.textContent = 'Drag and drop to reorder list';
-
-mainAppContainer.append(createTaskInput(), tasksComponent.tasksContainer);
-mainAppContainer.append(tasksComponent.createStatusInfo(), createTaskFilter(), hintText);
-
-content.append(createHeader(), mainAppContainer);
-
-// Add event listeners here (this is currently just for seeing on the page)
-tasksComponent.createTask('test');
-tasksComponent.createTask('test-two');
-tasksComponent.createTask('test-three');
-tasksComponent.createTask('test-four');
-tasksComponent.createTask('test-five');
-tasksComponent.createTask('test-six');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  taskList.appendChild(tasks.createTask(inputField.value));
+  inputField.value = '';
+});
