@@ -58,6 +58,10 @@ h1 {
     margin-bottom: var(--standard-margin);
     border-radius: var(--standard-border-radius);
 }
+#input-field {
+    border: 0;
+    border-bottom: 1px solid black;
+}
 .circle {
     width: 20px;
     height: 20px;
