@@ -1,3 +1,4 @@
+import './style.css';
 import createTask from './tasks';
 
 const taskList = document.getElementById('task-list');
