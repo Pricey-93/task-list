@@ -1,5 +1,9 @@
 import './style.css';
+import moon from './assets/images/icon-moon.svg';
 import createTask from './tasks';
+
+const moonImage = document.querySelector('.page-theme-icon');
+moonImage.src = moon;
 
 const taskList = document.getElementById('task-list');
 

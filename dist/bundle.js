@@ -126,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _tasks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tasks */ \"./src/tasks.js\");\n\n\n\nconst taskList = document.getElementById('task-list');\n\nfunction loadTasks() {\n  const tasks = JSON.parse(localStorage.getItem('tasks'));\n  tasks.forEach((task) => {\n    taskList.appendChild((0,_tasks__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(task));\n  });\n}\n\nconst inputField = document.getElementById('input-field');\nconst form = document.getElementById('input-container');\n\nform.addEventListener('submit', (e) => {\n  e.preventDefault();\n  taskList.appendChild((0,_tasks__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(inputField.value));\n  inputField.value = '';\n});\n// localStorage.clear();\nif (localStorage.length > 0) {\n  window.onload = loadTasks();\n}\n\n\n//# sourceURL=webpack://task-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _assets_images_icon_moon_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/images/icon-moon.svg */ \"./src/assets/images/icon-moon.svg\");\n/* harmony import */ var _tasks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./tasks */ \"./src/tasks.js\");\n\n\n\n\nconst moonImage = document.querySelector('.page-theme-icon');\nmoonImage.src = _assets_images_icon_moon_svg__WEBPACK_IMPORTED_MODULE_1__;\n\nconst taskList = document.getElementById('task-list');\n\nfunction loadTasks() {\n  const tasks = JSON.parse(localStorage.getItem('tasks'));\n  tasks.forEach((task) => {\n    taskList.appendChild((0,_tasks__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(task));\n  });\n}\n\nconst inputField = document.getElementById('input-field');\nconst form = document.getElementById('input-container');\n\nform.addEventListener('submit', (e) => {\n  e.preventDefault();\n  taskList.appendChild((0,_tasks__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(inputField.value));\n  inputField.value = '';\n});\n// localStorage.clear();\nif (localStorage.length > 0) {\n  window.onload = loadTasks();\n}\n\n\n//# sourceURL=webpack://task-list/./src/index.js?");
 
 /***/ }),
 
@@ -146,7 +146,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"images/645bd127083ef66fbfb9.jpg\";\n\n//# sourceURL=webpack://task-list/./src/assets/images/bg-mobile-light.jpg?");
+eval("module.exports = __webpack_require__.p + \"images/bg-mobile-light.jpg\";\n\n//# sourceURL=webpack://task-list/./src/assets/images/bg-mobile-light.jpg?");
 
 /***/ }),
 
@@ -156,7 +156,7 @@ eval("module.exports = __webpack_require__.p + \"images/645bd127083ef66fbfb9.jpg
   \******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"images/a8fb15d0278c8e312df5.svg\";\n\n//# sourceURL=webpack://task-list/./src/assets/images/icon-check.svg?");
+eval("module.exports = __webpack_require__.p + \"images/icon-check.svg\";\n\n//# sourceURL=webpack://task-list/./src/assets/images/icon-check.svg?");
 
 /***/ }),
 
@@ -166,7 +166,17 @@ eval("module.exports = __webpack_require__.p + \"images/a8fb15d0278c8e312df5.svg
   \******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"images/6ee81d30b75cab19d6f7.svg\";\n\n//# sourceURL=webpack://task-list/./src/assets/images/icon-cross.svg?");
+eval("module.exports = __webpack_require__.p + \"images/icon-cross.svg\";\n\n//# sourceURL=webpack://task-list/./src/assets/images/icon-cross.svg?");
+
+/***/ }),
+
+/***/ "./src/assets/images/icon-moon.svg":
+/*!*****************************************!*\
+  !*** ./src/assets/images/icon-moon.svg ***!
+  \*****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"images/icon-moon.svg\";\n\n//# sourceURL=webpack://task-list/./src/assets/images/icon-moon.svg?");
 
 /***/ })
 
